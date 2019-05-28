@@ -1,9 +1,9 @@
 # CaPortal
 ### Technologies Used--
 Angular</br>
-Material Design
-Flex Layout ( For responsive Design ) 
-Facebook Api ( for varification )
+Material Design</br>
+Flex Layout ( For responsive Design ) </br>
+Facebook Api ( for varification )</br>
 
 
 ## Development server
