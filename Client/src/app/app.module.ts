@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './materialmodule';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 //Components
 import { AppComponent } from './app.component';
@@ -18,8 +19,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 
+
 //Helpers
 import { AuthInterceptor } from './helpers/auth-interceptor';
+
+
+//AdminComponents
+import { UserdetailsComponent } from './admin-components/userdetails/userdetails.component';
+import { AdmintaskComponent } from './admin-components/admintask/admintask.component';
+import { AdminnavbarComponent } from './admin-components/adminnavbar/adminnavbar.component';
+import { DatatableComponent } from './admin-components/datatable/datatable.component';
+import { PostComponent } from './admin-components/post/post.component';
+import { PostsTableComponent } from './admin-components/posts-table/posts-table.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +43,13 @@ import { AuthInterceptor } from './helpers/auth-interceptor';
     DashboardComponent,
     FooterComponent,
     TasksComponent,
+    UserdetailsComponent,
+    AdmintaskComponent,
+    AdminnavbarComponent,
+    DatatableComponent,
+    PostComponent,
+    PostsTableComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +57,8 @@ import { AuthInterceptor } from './helpers/auth-interceptor';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

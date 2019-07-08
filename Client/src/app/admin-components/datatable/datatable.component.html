@@ -1,0 +1,46 @@
+
+<div class="example-container mat-elevation-z8 wid">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- NAME Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> NAME </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <!-- EMAIL Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef > EMAIL </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+    </ng-container>
+
+    <!-- POINTS Column -->
+    <ng-container matColumnDef="points">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> POINTS </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.points}} </mat-cell>
+    </ng-container>
+
+    <!-- REFERRALCODE Column -->
+    <ng-container matColumnDef="referralcode">
+      <mat-header-cell *matHeaderCellDef> REFERRALCODE </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.referralcode}} </mat-cell>
+    </ng-container>
+
+    <!-- RANK Column -->
+    <ng-container matColumnDef="rank">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> RANK </mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.rank}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+
+
+

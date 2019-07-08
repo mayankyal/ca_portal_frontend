@@ -8,44 +8,62 @@ import { GuidelinesComponent } from './components/guidelines/guidelines.componen
 import { TasksComponent } from './components/tasks/tasks.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AnonymusGuard } from './guards/anonymus.guard';
+import { UserdetailsComponent } from './admin-components/userdetails/userdetails.component';
+import { AdmintaskComponent } from './admin-components/admintask/admintask.component';
+import { PostComponent } from './admin-components/post/post.component';
+
 
 
 const routes: Routes = [
   {
     path: 'Dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
+    component: DashboardComponent
+    //canActivate: [AuthGuard]
   },
   {
     path: 'Login',
-    component: LoginComponent,
-    canActivate: [AnonymusGuard]
+    component: LoginComponent
+    //canActivate: [AnonymusGuard]
   },
   {
     path: 'Contacts',
-    component: ContactComponent,
+    component: ContactComponent
     //canActivate: [AuthGuard]
   },
   {
     path: 'Posts',
-    component: FbpostsComponent,
+    component: FbpostsComponent
     //canActivate: [AuthGuard]
   },
   {
     path: 'Tasks',
-    component: TasksComponent,
+    component: TasksComponent
     //canActivate: [AuthGuard]
   },
   {
     path: 'Guidelines',
-    component: GuidelinesComponent,
+    component: GuidelinesComponent
     //canActivate: [AuthGuard]
+  },
+  {
+    path: 'Admin',
+    component: UserdetailsComponent
+  },
+  
+  {
+    path: 'AdminTask',
+    component: AdmintaskComponent
+  },
+  {
+    path: 'AdminPost',
+    component: PostComponent
   },
   {
     path: '**',
     redirectTo: '/Login',
     pathMatch: 'full'
   }
+  
 ];
 
 @NgModule({

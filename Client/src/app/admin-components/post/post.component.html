@@ -1,0 +1,47 @@
+<div>
+    <app-adminnavbar></app-adminnavbar>
+  </div>
+  <div class="content">
+    <button mat-raised-button color="accent" (click)="create()">
+      {{ text }}
+    </button>
+    <button mat-raised-button color="accent" (click)="submit()" *ngIf="create_is_clicked">
+      Submit
+    </button>
+  
+    <div *ngIf="create_is_clicked">
+      <div class="example-container">
+  
+        <mat-form-field>
+          <input matInput placeholder="Post ID" [formControl]="IDFormControl" [(ngModel)]="post_id" required />
+          <mat-error *ngIf="IDFormControl.hasError('required')">
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="picker3"
+            placeholder="Expiration Date(month/day/year) "
+            [value]="post_time.value"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker3"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+  
+        
+       
+      </div>
+    </div>
+    <br>
+    <br>
+  
+    <app-posts-table></app-posts-table>
+  
+  </div>
+  
+  <app-footer></app-footer>

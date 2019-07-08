@@ -1,0 +1,12 @@
+.top{
+    position: top;
+}
+.content{
+    padding: 90px ;
+    min-height: 700px;
+}
+
+.container{
+    height:100%;
+    
+}

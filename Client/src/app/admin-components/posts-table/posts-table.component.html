@@ -1,0 +1,23 @@
+<div class="example-container mat-elevation-z8 wid">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Post ID Column -->
+    <ng-container matColumnDef="postID">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Post ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.postID}} </mat-cell>
+    </ng-container>
+
+    <!-- Expiration Time Column -->
+    <ng-container matColumnDef="expTime">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Expiration Time </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.expTime}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
