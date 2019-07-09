@@ -1,0 +1,8 @@
+.width-70{
+    max-width: 70%;
+}
+.border-accent-right{
+    border-right-style: solid;
+    border-right-width: 4px;
+    border-color:  #FF6F00;
+}

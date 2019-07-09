@@ -1,0 +1,14 @@
+.dialog-title {
+  margin: 0;
+  padding: 0;
+}
+.dialog-icon {
+  font-size: 45px !important;
+  margin: 0;
+}
+.spinner-wrapper {
+  width: 100%;
+}
+.spinner {
+  margin: 5px auto;
+}

@@ -1,0 +1,53 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="body-wrapper">
+  <div class="add-wrapper">
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Create Post
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field>
+              <input matInput placeholder="Age" [formControl]="postId">
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <input matInput placeholder="Age">
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="accent">Submit</button>
+        </mat-expansion-panel>
+  </div>
+
+  <div class="table-container mat-elevation-z8">
+
+    <mat-form-field class="search-bar">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+      <!-- Post ID Column -->
+      <ng-container matColumnDef="postID">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Post ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.postID}} </mat-cell>
+      </ng-container>
+
+      <!-- Expiration Time Column -->
+      <ng-container matColumnDef="expTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Expiration Time </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.expTime}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator></mat-paginator>
+  </div>
+</div>

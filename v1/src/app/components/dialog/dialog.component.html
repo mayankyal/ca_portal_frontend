@@ -1,0 +1,17 @@
+<div mat-dialog-title class="dialog-title text-center">
+    <mat-icon [inline]="true" *ngIf="dialogData.type == -1" class="dialog-icon color-red">cancel</mat-icon>
+    <mat-icon [inline]="true" *ngIf="dialogData.type == 0" class="dialog-icon text-accent">info</mat-icon>
+    <mat-icon [inline]="true" *ngIf="dialogData.type == 1" class="dialog-icon color-green">check_circle</mat-icon>
+    <mat-icon [inline]="true" *ngIf="dialogData.type == 2" class="dialog-icon">help</mat-icon>
+</div>
+<div mat-dialog-content >
+  <p class="font-25 no-margin">{{ dialogData.title }}</p>
+  <p>{{ dialogData.content }}</p>
+</div>
+<div mat-dialog-title *ngIf="dialogData.type == 4" class="dialog-title text-center spinner-wrapper">
+  <mat-spinner class="spinner" color='accent'></mat-spinner>
+</div>
+<div mat-dialog-actions *ngIf="dialogData.type != 4">
+  <button mat-flat-button color="accent" (click)="onNoClick()" cdkFocusInitial>Close</button>
+  <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+</div>

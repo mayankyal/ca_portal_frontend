@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div class="bg-primary-dark font-ubuntu font-30 padding-20">
+  Dashboard
+  <div class="font-15">
+    User ID: {{ userID }}
+    <button mat-stroked-button color="accent" matTooltip="Copy UserID to clipboard" matTooltipPosition="right" (click)="copyMessage(userID)" value="click to copy" >Copy</button>
+  </div>
+</div>
+<div class="pre-loader" *ngIf="showLoading">
+  <div class="wrapper">
+    <img src="../../../assets/loading.png" alt="logo">
+    <p>Loading ...</p>
+    <mat-progress-bar color="accent" mode="buffer"></mat-progress-bar>
+  </div>
+</div>
+<div *ngIf="!showLoading" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="15px" fxLayout.xs="column" class="bg-primary-light height-100">
+  <div fxFlex="30%" class="margin-15">
+    <mat-card class="margin-top-15 mat-elevation-z5 border-bottom-primary">
+        <mat-card-title>Leaderboard</mat-card-title>
+        <mat-card-subtitle *ngIf="rank <= 10">Congrats you are on the top 10 among all Campus Ambassadors : )</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="rank > 10">The leaderboard shows your rank and top 10 campus Ambassadors</mat-card-subtitle>
+        <mat-list>
+            <mat-list-item class="font-ubuntu-bold" *ngFor="let item of leaderboard; index as i" [ngClass] = "rank == i+1 ? 'text-accent-light' : '' ">
+              <span class="lb-rank">{{i + 1}} </span>
+                {{item.name}}  <span *ngIf="rank == i+1">  (You)</span>
+            <mat-divider></mat-divider></mat-list-item>
+            <mat-list-item *ngIf="rank > 10" class="text-accent-light">
+                <div class="breaker">
+                    <mat-icon [inline]="true" class="task-icon">stop</mat-icon>
+                    <br>
+                    <mat-icon [inline]="true" class="task-icon">stop</mat-icon>
+                    <br>
+                    <mat-icon [inline]="true" class="task-icon">stop</mat-icon>
+                    <br>
+                    <mat-icon [inline]="true" class="task-icon">stop</mat-icon>
+                </div>
+            </mat-list-item>
+
+            <mat-list-item *ngIf="rank > 10" class="text-accent-light">
+                  <span class="lb-rank">{{rank}}</span>
+                  {{user_name}} (You)
+            <mat-divider></mat-divider></mat-list-item>
+        </mat-list>
+        <br>
+    </mat-card>
+  </div>
+  <div fxLayout="row wrap" class="margin-top-15 margin-bottom-30" fxLayoutAlign="start" fxLayout.xs="column" fxFlex="70%">
+
+      <mat-card fxFlex.lt-md="0 1 calc(50% - 30px)" fxFlex="0 1 calc(33% - 30px)" class="margin-15 text-center mat-elevation-z5 border-bottom-accent">
+        <mat-card-title>Referal Code</mat-card-title>
+        <mat-card-subtitle class="font-lato">Use this code to get discounts</mat-card-subtitle>
+        <div  class="font-50 no-margin no-padding text-accent-light border-accent round mat-elevation-z3"><div class="round-content-15" >
+          {{ refcode }}
+          <br>
+          <button mat-stroked-button color="accent" matTooltip="Copy Referal Code to clipboard" matTooltipPosition="below" (click)="copyMessage(refcode)" value="click to copy" >Copy</button>
+        </div></div>
+      </mat-card>
+
+      <mat-card fxFlex.lt-md="0 1 calc(50% - 30px)" fxFlex="0 1 calc(33% - 30px)" class="margin-15 text-center mat-elevation-z5 border-bottom-accent">
+        <mat-card-title>Total Points</mat-card-title>
+        <mat-card-subtitle>Total number of points you earned</mat-card-subtitle>
+        <div class="font-50 no-margin no-padding text-accent-light border-accent round mat-elevation-z3"><div class="round-content-30">{{ total_points }}</div></div>
+      </mat-card>
+
+      <mat-card fxFlex.lt-md="0 1 calc(50% - 30px)" fxFlex="0 1 calc(33% - 30px)" class="margin-15 text-center mat-elevation-z5 border-bottom-accent">
+        <mat-card-title>Rank</mat-card-title>
+        <mat-card-subtitle>Your rank among all the Campus Ambassadors</mat-card-subtitle>
+        <div class="font-50 no-margin no-padding text-accent-light border-accent round mat-elevation-z3"><div class="round-content-30">{{ rank }}</div></div>
+      </mat-card>
+
+      <mat-card fxFlex.lt-md="0 1 calc(50% - 30px)" fxFlex="0 1 calc(33% - 30px)" class="margin-15 text-center mat-elevation-z5 border-bottom-accent">
+        <mat-card-title>Posts shared</mat-card-title>
+        <mat-card-subtitle>Total no. of posts shared so far</mat-card-subtitle>
+        <div class="font-50 no-margin no-padding text-accent-light border-accent round mat-elevation-z3"><div class="round-content-30">{{ posts_shared }}</div></div>
+      </mat-card>
+
+      <mat-card fxFlex.lt-md="0 1 calc(50% - 30px)" fxFlex="0 1 calc(33% - 30px)" class="margin-15 text-center mat-elevation-z5 border-bottom-accent">
+        <mat-card-title>Tickets Sold</mat-card-title>
+        <mat-card-subtitle>Total no. of tickets sold so far</mat-card-subtitle>
+        <div class="font-50 no-margin no-padding text-accent-light border-accent round mat-elevation-z3"><div class="round-content-30">{{ tickets_sold }}</div></div>
+      </mat-card>
+
+      <mat-card fxFlex.lt-md="0 1 calc(50% - 30px)" fxFlex="0 1 calc(33% - 30px)" class="margin-15 text-center mat-elevation-z5 border-bottom-accent">
+        <mat-card-title>Tasks Completed</mat-card-title>
+        <mat-card-subtitle>Total no. of tasks completed so far</mat-card-subtitle>
+        <div class="font-50 no-margin no-padding text-accent-light border-accent round mat-elevation-z3"><div class="round-content-30">{{ task_completed }}</div></div>
+      </mat-card>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="bg-primary-dark font-ubuntu font-30 padding-20">Tasks</div>
+<div class="pre-loader" *ngIf="showLoading">
+  <div class="wrapper">
+    <img src="../../../assets/loading.png" alt="logo">
+    <p>Loading ...</p>
+    <mat-progress-bar color="accent" mode="buffer"></mat-progress-bar>
+  </div>
+</div>
+<div *ngIf="!showLoading" class="bg-primary-light height-100">
+  <div *ngIf = "count <= 0" class="margin-15 font-20">
+    Tasks will be updated soon.
+  </div>
+
+  <div *ngIf = "count > 0" fxLayout="row wrap" class="task-wrapper" fxLayoutAlign="start" fxLayout.xs="column" fxFlex="90%" fxFlex.xs="100%">
+      <mat-card *ngFor="let task of tasks" [ngClass]="task.isCompleted ? 'border-green' : 'border-red'"  fxFlex="0 1 calc(50% - 30px)" class="margin-15 text-center mat-elevation-z5 task">
+        <mat-card-title class="task-title font-ubuntu">{{ task.taskTitle }}</mat-card-title>
+        <mat-card-subtitle>
+          <span class="task-exp font-lato text-accent-light">
+            <mat-icon class="task-icon">schedule</mat-icon>
+            Valid Till: {{ getDate(task.expTime) }}
+          </span>
+          <br fxHide.gt-sm="true">
+          <span class="task-status text-accent-light font-lato">Completed:
+            <span *ngIf="task.isCompleted">
+                <mat-icon class="task-icon color-green">check_circle</mat-icon>
+            </span>
+            <span *ngIf="!task.isCompleted">
+                <mat-icon class="task-icon color-red">cancel</mat-icon>
+            </span>
+          </span>
+        </mat-card-subtitle>
+        <div  class="font-15 no-margin no-padding padding-top-30 no-padding">
+          <div class="task-content font-lato" >{{ task.taskContent }}</div>
+        </div>
+        <div class="task-reward text-accent-light font-20 font-ubuntu-bold">Reward: {{ task.points }} Points</div>
+      </mat-card>
+  </div>
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+.task-wrapper {
+    margin: 20px 5%;
+}
+.task-exp {
+    float: left;
+}
+.task-status {
+    float: right;
+}
+.task-content {
+    clear: both;
+}
+.task-reward {
+    margin: 20px auto;
+}
+.task-icon {
+    position: relative;
+    top: 7px;
+}
+@media only screen and (max-width: 600px) {
+    .task-wrapper {
+        position: relative;
+        top: 10px;
+        line-height: 30px;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .task-exp, .task-status {
+        clear: both;
+        float: none;
+    }
+}

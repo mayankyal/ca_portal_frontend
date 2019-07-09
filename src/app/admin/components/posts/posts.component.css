@@ -1,0 +1,29 @@
+.body-wrapper {
+  padding: 20px 30px;
+}
+
+.add-wrapper {
+  margin: 20px 30px;
+}
+
+.add-wrapper mat-expansion-panel {
+  background-color: #222;
+}
+
+.table-container {
+  margin: 10px 15px;
+  border-radius: 8px;
+}
+
+.search-bar {
+  margin: 10px 5%;
+  width: 90%;
+}
+
+mat-form-field {
+  min-width: 70%;
+  max-width: 80%;
+  ;
+  margin: 8px;
+  margin-left: 0px;
+}

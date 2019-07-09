@@ -1,0 +1,281 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato:400|Slabo+27px|Ubuntu:300,400,700&display=swap');
+
+body {
+  margin: 0 0 0 0;
+  background-color: #616161;
+  font-family: 'Lato', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight: 700;
+}
+
+.bg-primary {
+  background-color: #424242;
+  color: aliceblue;
+}
+
+.bg-primary-light {
+  background-color: #616161;
+  color: white;
+}
+
+.bg-primary-dark {
+  background-color: #212121;
+  color: whitesmoke;
+}
+
+.bg-accent {
+  background-color: #FF8F00;
+  color: #424242;
+}
+
+.bg-accent-light {
+  background-color: #FFA000;
+  color: #212121;
+}
+
+.bg-accent-dark {
+  background-color: #FF6F00;
+  color: #616161;
+}
+
+.text-accent {
+  color: #FF8F00 !important;
+}
+
+.text-accent-dark {
+  color: #FF6F00 !important;
+}
+
+.text-accent-light {
+  color: #FFA000 !important;
+}
+
+.color-green {
+  color: #218c74 !important;
+}
+
+.color-red {
+  color: #b33939 !important;
+}
+
+
+.no-margin {
+  margin: 0 0 0 0;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.margin-15 {
+  margin: 15px 15px 15px 15px;
+}
+
+.margin-30 {
+  margin: 30px;
+  -webkit-margin-collapse: collapse;
+}
+
+.no-padding {
+  padding: 0 0 0 0;
+}
+
+.no-padding-i {
+  padding: 0 0 0 0 !important;
+}
+
+.padding-10 {
+  padding: 10px 10px 10px 10px;
+}
+
+.padding-20 {
+  padding: 20px 20px 20px 20px;
+}
+
+.padding-30 {
+  padding: 30px 30px 30px 30px;
+}
+
+.padding-top-30 {
+  padding-top: 30px;
+}
+
+.font-slabo {
+  font-family: 'Slabo 27px', serif !important;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif !important;
+}
+
+.font-ubuntu {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight: 300 !important;
+}
+
+.font-ubuntu-bold {
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-center {
+  align-content: center;
+  align-items: center;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.font-50 {
+  font-size: 50px;
+}
+
+.font-70 {
+  font-size: 70px;
+}
+
+.font-90 {
+  font-size: 90px;
+}
+
+.max-height-60 {
+  max-height: 100vh;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.border-primary,
+.border-accent,
+.border-red,
+.border-green {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 1px;
+}
+
+.border-primary {
+  border-color: #212121;
+}
+
+.border-accent {
+  border-color: #FF8F00;
+}
+
+.border-red {
+  border-color: #b33939;
+}
+
+.border-green {
+  border-color: #218c74;
+}
+
+.border-bottom-primary,
+.border-bottom-accent,
+.border-bottom-green,
+.border-bottom-red {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+}
+
+.border-bottom-primary {
+  border-color: #212121;
+}
+
+.border-bottom-accent {
+  border-color: #FF8F00;
+}
+
+.border-bottom-red {
+  border-color: #b33939;
+}
+
+.border-bottom-green {
+  border-color: #218c74;
+}
+
+.pre-loader {
+  width: 99vw;
+  height: 90vh;
+  text-align: center;
+}
+
+.pre-loader .wrapper {
+  max-width: 150px;
+  position: relative;
+  margin: calc(50vh - 100px) calc(50vw - 80px);
+}
+
+.pre-loader img {
+  max-width: 50px;
+}
+
+.pre-loader p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #FF8F00;
+}
+
+.hide {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.height-100 {
+  min-height: 100vh;
+}
+.mat-menu-panel {
+  background-color: #303030 !important;
+  border-radius: 1px !important;
+}
+
+
