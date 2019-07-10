@@ -12,6 +12,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminAuthInterceptor } from './helpers/admin-auth-interceptor';
 import { MaterialModule } from './materialmodule';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { MaterialModule } from './materialmodule';
     CommonModule,
     AdminRoutingModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AdminAuthInterceptor, multi: true}]
 })
