@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'tasks',
     component: TaskComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
   }
 ];
 

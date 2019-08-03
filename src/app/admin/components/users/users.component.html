@@ -1,3 +1,51 @@
-<p>
-  users works!
-</p>
+<app-adminnavbar></app-adminnavbar>
+
+<div class="body-wrapper">
+
+    <div class="table-container mat-elevation-z8">
+
+        <mat-form-field class="search-bar">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+
+
+        <mat-table [dataSource]="dataSource" matSort>
+
+            <!-- USER ID Column -->
+            <ng-container matColumnDef="userID">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> USER ID </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.userID}} </mat-cell>
+            </ng-container>
+
+            <!--  NAME  Column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> NAME </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+            </ng-container>
+
+            <!-- e-mail Column -->
+            <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>e-mail </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+            </ng-container>
+
+            <!-- TOTAL POINTS Column -->
+            <ng-container matColumnDef="totalPoints">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>TOTAL POINTS </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.totalPoints}} </mat-cell>
+            </ng-container>
+
+            <!-- CASHBACK Column -->
+            <ng-container matColumnDef="cashback">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>CASHBACK </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.cashback}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+
+        <mat-paginator></mat-paginator>
+    </div>
+</div>
