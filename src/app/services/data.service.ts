@@ -8,7 +8,8 @@ import {
   SERVER_DASHBOARD_URI,
   SERVER_POSTS_URI,
   SERVER_TASKS_URI,
-  SERVER_POSTSHARE_URI
+  SERVER_POSTSHARE_URI,
+  SERVER_REDEEM_URI
 } from '../variables';
 
 
@@ -47,6 +48,21 @@ export class DataService {
         .get<any>(SERVER_DOMAIN + SERVER_DASHBOARD_URI, { observe: 'response' })
         .toPromise();
       return response.body;
+    } catch (error) {
+      console.log(error);
+      if (error.status === HTTP_ERROR_NEED_LOGOUT) {
+        this.userService.logout();
+        return;
+      }
+    }
+  }
+
+  async getRedeemData(){
+    try {
+      const response = await this.http
+        .get<any>(SERVER_DOMAIN + SERVER_REDEEM_URI, {observe : 'response'})
+        .toPromise();
+      return response.body;  
     } catch (error) {
       console.log(error);
       if (error.status === HTTP_ERROR_NEED_LOGOUT) {

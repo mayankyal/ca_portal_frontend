@@ -24,6 +24,7 @@ import { AuthInterceptor } from './helpers/auth-interceptor';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TocComponent } from './components/toc/toc.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { RedeemDialogComponent } from './components/redeem-dialog/redeem-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     TasksComponent,
     PrivacyPolicyComponent,
     TocComponent,
-    DialogComponent
+    DialogComponent,
+    RedeemDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,8 +51,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     FlexLayoutModule,
     FormsModule
   ],
-  entryComponents: [DialogComponent],
-  exports: [DialogComponent],
+  entryComponents: [DialogComponent,RedeemDialogComponent],
+  exports: [DialogComponent,RedeemDialogComponent],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })

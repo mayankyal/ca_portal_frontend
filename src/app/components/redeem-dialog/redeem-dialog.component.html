@@ -1,0 +1,9 @@
+<div mat-dialog-content>
+    <p class="font-25 no-margin">{{ dialogData.status }}</p>
+    <p>{{ dialogData.message }}</p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-flat-button color="accent" *ngIf="dialogData.showRedeem" (click)="redeem()" cdkFocusInitial>Redeem</button>
+    <button mat-flat-button color="accent" [class.button-align]="dialogData.showRedeem" (click)="onNoClick()" cdkFocusInitial>Close</button>
+</div>
